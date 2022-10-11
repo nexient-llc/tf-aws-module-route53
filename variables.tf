@@ -38,7 +38,7 @@ variable "alias_zone_id" {
 }
 
 variable "tags" {
-  description = "Tags to be applied to all resources created"
+  description = "Tags to be applied to all resources created."
   type        = map(string)
   default     = {}
 }
