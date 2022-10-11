@@ -12,17 +12,33 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-variable "length" {
-  type    = number
-  default = 24
+variable "dns" {
+  description = "DNS/Subdomain to create"
+  type        = string
 }
 
-variable "number" {
-  type    = bool
-  default = true
+variable "domain" {
+  description = "Domain/Hosted Zone"
+  type        = string
 }
 
-variable "special" {
-  type    = bool
-  default = false
+variable "zone_id" {
+  description = "Domain Hosted Zone id"
+  type        = string
+}
+
+variable "alias_dns" {
+  description = "DNS to Alias (e.g.; ALB DNS)"
+  type        = string
+}
+
+variable "alias_zone_id" {
+  description = "DNS Alias Zone ID (e.g.; ALB DNS Zone ID)"
+  type        = string
+}
+
+variable "tags" {
+  description = "Tags to be applied to all resources created."
+  type        = map(string)
+  default     = {}
 }

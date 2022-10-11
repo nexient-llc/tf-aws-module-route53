@@ -12,6 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-output "string" {
-  value = random_string.string.result
+output "name" {
+  description = "Route53 Name"
+  value       = aws_route53_record.application.name
+}
+
+output "fqdn" {
+  description = "Route53 FQDN"
+  value       = aws_route53_record.application.fqdn
 }

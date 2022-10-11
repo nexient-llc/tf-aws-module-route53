@@ -12,8 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-resource "random_string" "string" {
-  length  = var.length
-  number  = var.number
-  special = var.special
+resource "aws_route53_record" "application" {
+  zone_id = var.zone_id
+  name    = "${var.dns}.${var.domain}"
+  type    = "A"
+
+  alias {
+    name                   = var.alias_dns
+    zone_id                = var.alias_zone_id
+    evaluate_target_health = true
+  }
 }
